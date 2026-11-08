@@ -2,7 +2,13 @@
 
 **A desktop workbench for studying audio workflows with Suno. For noncommercial learning only.**
 
-[简体中文](README.zh-CN.md) · [Downloads](#downloads) · [Quick start](#quick-start) · [Workflow](#workflow) · [Build from source](#build-from-source) · [Usage terms](#usage-terms)
+[简体中文](README.zh-CN.md) · [Features](#features) · [Downloads](#downloads) · [Quick start](#quick-start) · [Workflow](#workflow) · [Build from source](#build-from-source) · [Usage terms](#usage-terms)
+
+## Features
+
+**Bring your recordings into Suno for covers and rearrangements.** When Suno announced v6, it described copyright screening for uploaded audio and lyrics. Suno's upload rules apply to paid accounts as well. If your own recording or licensed material gets flagged, keep your original project or permission records and check with Suno. For guitar recordings, original demos, or licensed cover material that can be uploaded, Suno Local handles the manual work of cutting six clips, uploading them, and arranging them in an editable Studio project. Suno decides whether to accept the uploads. [Suno v6 announcement](https://suno.com/blog/introducing-v6) · [Suno moderation overview](https://suno.com/safety)
+
+**Save a local copy of your audio.** As of November 8, 2026, Suno Pro includes 20 official song downloads per month. Downloading the same song again or in another format uses no additional allowance. Given a song link, Suno Local can try to save an available playback source as WAV or MP3. The app has no monthly save counter of its own. Saving depends on source availability and is subject to Suno's terms. [Suno download allowances](https://help.suno.com/en/articles/13926209) · [Usage terms](#usage-terms)
 
 ![Suno Local workbench with audio upload and WAV or MP3 save controls](docs/images/workbench.png)
 
