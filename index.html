@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suno Local · 音频工作台</title>
+<style>
+:root{color-scheme:dark;font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:#141613;color:#edece3;font-size:16px}
+*{box-sizing:border-box}body{margin:0}main{width:min(950px,100% - 40px);margin:48px auto 36px}
+header{display:flex;justify-content:space-between;align-items:start;gap:16px;border-bottom:1px solid #3a4037;padding-bottom:22px}
+.kicker,.index{font:600 .76rem ui-monospace,monospace;letter-spacing:.16em;color:#b5ce83}
+h1{margin:8px 0 4px;font-size:clamp(2.35rem,7vw,4.5rem);font-weight:700;line-height:.98;letter-spacing:-.07em}
+.sub,p{color:#b6b9ac;line-height:1.6}p{margin:0 0 14px;font-size:.92rem}.sub{margin-top:10px}
+.work{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+article,.status{background:#20241e;border:1px solid #3a4037;border-radius:14px;padding:20px}
+h2{font-size:1.36rem;margin:5px 0 9px}button,input,select{font:inherit}button,a.action{display:inline-block;border:1px solid #68775a;background:#272e23;color:#eeefe7;padding:9px 13px;border-radius:8px;text-decoration:none;cursor:pointer;font-size:.88rem}
+button:hover,a.action:hover{border-color:#b5ce83}button:disabled{opacity:.42;cursor:default}
+button.primary{background:#d3efaa;color:#192015;border-color:#d3efaa;font-weight:650}
+label{display:block;margin:16px 0 6px;font-size:.85rem}input,select{display:block;width:100%;min-width:0;padding:8px 9px;border:1px solid #58634f;border-radius:7px;background:#171b15;color:inherit}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px}.status{margin-top:16px}#message{display:block;margin-top:5px;white-space:pre-wrap}.error{color:#ffc19c}
+small{color:#a8ac9e;display:block;margin-top:10px;line-height:1.5}a{color:#d3efaa}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #d3efaa;outline-offset:2px}[hidden]{display:none!important}
+@media(max-width:640px){main{margin:28px auto}.work{grid-template-columns:1fr}header{flex-wrap:wrap}}
+</style>
+<main>
+<header>
+  <div><div class="kicker">LOCAL AUDIO WORKBENCH</div><h1>Suno Local</h1><div class="sub">个人音频工作台</div></div>
+  <button id="quit">退出工具</button>
+</header>
+<div class="work">
+  <article aria-labelledby="upload-title">
+    <span class="index">01 / UPLOAD</span><h2 id="upload-title">上传整首音频</h2>
+    <p>六段上传后在 Suno Studio 拼回整首。请先连接你已登录的普通 Chrome 标签页。</p>
+    <div class="controls"><button id="login">连接普通 Chrome</button><a class="action" href="https://suno.com/create" target="_blank" rel="noreferrer">打开 Suno</a></div>
+    <div id="pairing" hidden>
+      <label for="link-address">本机连接地址</label>
+      <input id="link-address" type="text" readonly autocomplete="off" spellcheck="false">
+      <small>复制地址，然后在已登录的 Suno 标签页点 Suno Local Link 图标并粘贴。</small>
+    </div>
+    <label for="source">选择本地音频</label>
+    <input id="source" type="file" accept=".aac,.aif,.aiff,.flac,.m4a,.mp3,.ogg,.wav,.opus,audio/*">
+    <small id="source-info">分段模式支持 9 秒至 12 分钟。音频时长以文件解析为准。</small>
+    <div class="controls"><button id="upload" class="primary" disabled>分段上传并在 Studio 拼接</button></div>
+  </article>
+  <article aria-labelledby="download-title">
+    <span class="index">02 / DOWNLOAD</span><h2 id="download-title">保存作品音频</h2>
+    <p>粘贴你的 Suno 作品链接。工具会尝试读取作品音源，转换后保存到本机。</p>
+    <label for="song">作品链接</label>
+    <input id="song" type="url" placeholder="https://suno.com/song/…">
+    <label for="format">保存格式</label>
+    <select id="format"><option value="mp3">MP3</option><option value="wav">WAV</option></select>
+    <div class="controls"><button id="download" class="primary">获取音频</button><a class="action" href="https://suno.com/studio" target="_blank" rel="noreferrer">打开官方 Studio</a></div>
+  </article>
+</div>
+<section class="status" aria-label="任务进度">
+  <span class="index">STATUS</span>
+  <output id="message" aria-live="polite">等待操作</output>
+  <div class="controls" id="result" hidden>
+    <a class="action" id="project" target="_blank" rel="noreferrer" hidden>打开 Studio 工程</a>
+    <a class="action" id="work" target="_blank" rel="noreferrer" hidden>打开作品</a>
+    <button class="primary" id="save" hidden>保存音频文件</button>
+  </div>
+</section>
+<footer><small>仅用于学习，禁止用于任何商业目的。<br><span lang="en">For learning only. Any commercial use is prohibited.</span></small></footer>
+</main>
+<script src="/ui.js"></script>
+</html>

@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Suno Local Link",
+  "version": "0.1.0",
+  "description": "连接当前 Suno 标签页与本机 Suno Local 工作台。",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["http://127.0.0.1/*"],
+  "action": { "default_title": "连接当前 Suno 标签页" },
+  "background": { "service_worker": "background.js" }
+}

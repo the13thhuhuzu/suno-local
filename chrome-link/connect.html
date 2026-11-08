@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<title>Suno Local Link</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui;background:#171a16;color:#eee}
+main{width:min(520px,90%);margin:12vh auto}p{line-height:1.6}input{box-sizing:border-box;width:100%;margin:10px 0;font:inherit;padding:9px}
+button{font:inherit;padding:8px 12px;margin-right:8px}
+</style>
+<main>
+<h1>Suno Local Link</h1>
+<p>从 Suno Local 工作台复制连接地址。连接仅用于你刚刚选中的 Suno 标签页，测试期间请保持这个页面打开。</p>
+<label for="address">本机连接地址</label>
+<input id="address" type="text" autocomplete="off" spellcheck="false">
+<button id="connect">连接</button><button id="disconnect" disabled>断开连接</button>
+<p id="status" role="status">等待连接。</p>
+</main>
+<script type="module" src="connect.mjs"></script>
+</html>

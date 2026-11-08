@@ -1,0 +1,5 @@
+.DS_Store
+dist/
+output/
+packaging/cache
+packaging/__pycache__/

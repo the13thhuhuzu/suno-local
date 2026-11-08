@@ -1,0 +1,23 @@
+Third-party components / 第三方组件
+
+Suno Local starts Node.js, FFmpeg and FFprobe as separate executables.
+The application's learning-use restriction does not apply to these components.
+Suno Local 通过独立可执行文件调用 Node.js、FFmpeg 和 FFprobe。
+本应用的学习用途限制不适用于以下第三方组件。
+
+Node.js 24.22.1
+License notices: Node-LICENSE.txt
+Exact source: https://nodejs.org/dist/v24.22.1/node-v24.22.1.tar.gz
+
+FFmpeg / FFprobe 9.0.2 with LAME 3.100 (LGPL-2.1-or-later)
+License notices: FFmpeg-LICENSE.txt, LAME-LICENSE.txt
+Both corresponding upstream source archives are available beside the installers.
+Application source includes the build scripts for both systems.
+两个对应版本的上游源码包和安装包一同发布，应用源码提供两平台的构建脚本。
+https://github.com/the13thhuhuzu/suno-local/releases/tag/v0.2.0
+https://ffmpeg.org/
+
+Windows compiler runtime / Windows 编译器运行库
+Zig 0.15.2 source including compiler-rt and MinGW headers/runtime:
+https://ziglang.org/download/0.15.2/zig-0.15.2.tar.xz
+Notices: Zig-LICENSE.txt and MinGW-COPYING.txt
